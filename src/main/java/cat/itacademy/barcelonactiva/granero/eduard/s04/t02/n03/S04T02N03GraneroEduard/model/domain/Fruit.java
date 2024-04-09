@@ -1,16 +1,13 @@
 package cat.itacademy.barcelonactiva.granero.eduard.s04.t02.n03.S04T02N03GraneroEduard.model.domain;
 
-import jakarta.persistence.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-@Table(name = "fruits")
+@Document(collection = "fruits")
 public class Fruit {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
-    @Column(name = "name")
+    private String id;
     private String name;
-    @Column(name = "quantityKilos")
     private int quantityKilos;
 
     public Fruit() {
@@ -22,11 +19,11 @@ public class Fruit {
         this.quantityKilos = quantityKilos;
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

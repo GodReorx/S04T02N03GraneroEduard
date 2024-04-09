@@ -17,7 +17,7 @@ public class FruitController {
     FruitService fruitService;
 
     @GetMapping("/getOne/{fruitId}")
-    public ResponseEntity<Fruit> getOneFruit(@PathVariable long fruitId){
+    public ResponseEntity<Fruit> getOneFruit(@PathVariable("fruitId") String fruitId){
         return ResponseEntity.ok().body(this.fruitService.getOne(fruitId));
     }
 
@@ -36,7 +36,7 @@ public class FruitController {
     }
 
     @DeleteMapping("/delete/{fruitId}")
-    public HttpStatus deleteFruit(@PathVariable long fruitId){
+    public HttpStatus deleteFruit(@PathVariable("fruitId") String fruitId){
         this.fruitService.delete(fruitId);
         return HttpStatus.OK;
     }

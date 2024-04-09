@@ -2,8 +2,11 @@ package cat.itacademy.barcelonactiva.granero.eduard.s04.t02.n03.S04T02N03Granero
 
 
 import cat.itacademy.barcelonactiva.granero.eduard.s04.t02.n03.S04T02N03GraneroEduard.model.domain.Fruit;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface FruitRepository extends JpaRepository<Fruit,Long> {
+import java.util.List;
+
+
+public interface FruitRepository extends MongoRepository<Fruit, String> {
 
 }

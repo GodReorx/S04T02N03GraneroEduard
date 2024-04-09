@@ -34,7 +34,7 @@ public class FruitServiceImpl implements FruitService{
     }
 
     @Override
-    public void delete(long fruitId) {
+    public void delete(String fruitId) {
         Optional<Fruit> fruitDb = this.fruitRepository.findById(fruitId);
         if(fruitDb.isPresent()){
             this.fruitRepository.deleteById(fruitId);
@@ -44,7 +44,7 @@ public class FruitServiceImpl implements FruitService{
     }
 
     @Override
-    public Fruit getOne(long fruitId) {
+    public Fruit getOne(String fruitId) {
         Optional<Fruit> fruitDb = this.fruitRepository.findById(fruitId);
         if(fruitDb.isPresent()){
             return fruitDb.get();

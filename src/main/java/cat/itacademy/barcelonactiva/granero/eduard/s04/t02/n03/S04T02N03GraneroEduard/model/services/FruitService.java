@@ -8,7 +8,7 @@ import java.util.List;
 public interface FruitService {
     Fruit add (Fruit fruit);
     Fruit update (Fruit fruit);
-    void delete(long fruitId);
-    Fruit getOne(long fruitId);
+    void delete(String fruitId);
+    Fruit getOne(String fruitId);
     List<Fruit> getAll();
 }
